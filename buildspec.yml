@@ -1,0 +1,39 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: development
+
+  # parameter-store:
+    # SONARQUBE_TOKEN: "SonarQubeToken"
+    # SONARQUBE_URL: "SonarQubeUrl"
+    # SONARQUBE_ORG: "SonarQubeOrg"
+    # SONAR_CLI_URL: "SonarCLIUrl"
+    # SONAR_CLI_VERSION: "SonarCLIVersion"
+
+phases:
+  install:
+    commands:
+      # install serverless CLI
+      - npm install -g serverless
+
+      # Install dependencies needed for running tests
+      - npm install      
+  # pre_build:
+  #   commands:
+  #     # Discover and run unit tests in the 'tests' directory
+  #     - npm test
+
+  build:
+    commands:
+      # Use serverless framework to deploy
+      # - serverless create_domain --stage npr
+      # - serverless deploy --stage npr       #deploy development/QA api
+      - serverless create_domain --stage prd
+      - serverless deploy --stage prd     #deploy production api
+  # post_build:
+  #   commands:
+  #     # install & run sonar after build & deploy is complete
+  #     - wget $SONAR_CLI_URL
+  #     - unzip sonar-scanner-cli-$SONAR_CLI_VERSION-linux.zip
+  #     - sonar-scanner-$SONAR_CLI_VERSION-linux/bin/sonar-scanner
