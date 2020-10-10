@@ -30,6 +30,8 @@ phases:
       # - serverless create_domain --stage npr
       # - serverless deploy --stage npr       #deploy development/QA api
       # - serverless create_domain --stage prd
+      - serverless create --template aws-nodejs --path myService
+      - cd myService
       - serverless deploy --stage prd     #deploy production api
   # post_build:
   #   commands:
