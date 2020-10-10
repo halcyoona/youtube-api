@@ -29,7 +29,7 @@ phases:
       # Use serverless framework to deploy
       # - serverless create_domain --stage npr
       # - serverless deploy --stage npr       #deploy development/QA api
-      - serverless create_domain --stage prd
+      # - serverless create_domain --stage prd
       - serverless deploy --stage prd     #deploy production api
   # post_build:
   #   commands:
