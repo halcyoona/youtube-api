@@ -29,7 +29,7 @@ phases:
       # Use serverless framework to deploy
       # - serverless create_domain --stage npr
       # - serverless deploy --stage npr       #deploy development/QA api
-      - serverless create --template aws-nodejs --stage prd
+      # - serverless create --template aws-nodejs --stage prd
       # - serverless create --template aws-nodejs --path myService
       # - cd myService
       - serverless deploy --stage prd     #deploy production api
